@@ -59,11 +59,11 @@ The EED Score evaluates the similarity between the model-generated answer and th
 1. **Simplification of Expressions**:Both the ground truth (`gt`) and the model-generated answer (`gen`) are first converted into simplified symbolic expressions using the `sympy.simplify()` function. This step ensures that equivalent forms of the same expression are recognized as identical.
 2. **Equivalence Check**:If the simplified expressions of `gt` and `gen` are identical, the EED Score is assigned a perfect score of 100, indicating complete correctness.
 3. **Tree Conversion and Edit Distance Calculation**:If the expressions are not identical, they are converted into tree structures. The edit distance between these trees is then calculated using an extended version of the Zhang-Shasha algorithm. This distance represents the minimum number of node-level operations (insertions, deletions, and updates) required to transform one tree into the other.
-4. **Relative Edit Distance and Scoring**:The relative edit distance \( r \) is computed as the ratio of the edit distance to the size of the ground truth tree. The EED Score is then determined based on this relative distance:
+4. **Relative Edit Distance and Scoring**:The relative edit distance $ r $ is computed as the ratio of the edit distance to the size of the ground truth tree. The EED Score is then determined based on this relative distance:
 
-   - If \( r = 0 \) (i.e., the expressions are identical), the score is 100.
-   - If \( 0 < r < 0.6 \), the score is calculated as \( 60 - 100r \).
-   - If \( r \geq 0.6 \), the score is 0, indicating a significant discrepancy between the model-generated answer and the ground truth.
+   - If $ r = 0 $ (i.e., the expressions are identical), the score is 100.
+   - If $ 0 < r < 0.6 $, the score is calculated as $ 60 - 100r $.
+   - If $ r \geq 0.6 $, the score is 0, indicating a significant discrepancy between the model-generated answer and the ground truth.
 
 This scoring mechanism provides a continuous measure of similarity, allowing for a nuanced evaluation of the model's reasoning capabilities beyond binary correctness.
 
@@ -120,8 +120,8 @@ print(f"The EED Score of Expression 2 is: {result_2:.0f}")
 ```
 #### Output
 ```bash
-The EED Score of Expression 1 is:100
-The EED Score of Expression 2 is:47
+The EED Score of Expression 1 is: 100
+The EED Score of Expression 2 is: 47
 ```
 **NOTICE**: Inputs with an incorrect format will automatically receive a **0** point as output without raising any errors.
 
