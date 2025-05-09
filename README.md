@@ -10,15 +10,15 @@ size_categories:
 ---
 
 <div align="center">
-<!-- <img src='https://example.com/phybench-logo.png' width=300px> <!-- (Placeholder for actual logo) --> 
+<!-- <img src='https://example.com/phybench-logo.png' width=300px> <!-- (Placeholder for actual logo) -->
 
 <p align="center" style="font-size:28px"><b>PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models</b></p>
 <p align="center">
-<a href="https://phybench.ai">[🌐 Project]</a>
+<a href="https://phybench-official.github.io/phybench-demo/">[🌐 Project]</a>
 <a href="https://arxiv.org/abs/2504.16074">[📄 Paper]</a>
-<a href="https://github.com/PHYBench/PHYBench">[💻 Code]</a>
+<a href="#eed-scoring">[💻 Code]</a>
 <a href="#-overview">[🌟 Overview]</a>
-<a href="#-data-details">[🔧 Data Details]</a>
+<a href="https://huggingface.co/datasets/Eureka-Lab/PHYBench">[🔧 Data Details]</a>
 <a href="#-citation">[🚩 Citation]</a>
 </p>
 
@@ -56,9 +56,9 @@ Key innovations:
 
 The EED Score evaluates the similarity between the model-generated answer and the ground truth by leveraging the concept of expression tree edit distance. The process involves the following steps:
 
-1. **Simplification of Expressions**:Both the ground truth (`gt`) and the model-generated answer (`gen`) are first converted into simplified symbolic expressions using the `sympy.simplify()` function. This step ensures that equivalent forms of the same expression are recognized as identical.
-2. **Equivalence Check**:If the simplified expressions of `gt` and `gen` are identical, the EED Score is assigned a perfect score of 100, indicating complete correctness.
-3. **Tree Conversion and Edit Distance Calculation**:If the expressions are not identical, they are converted into tree structures. The edit distance between these trees is then calculated using an extended version of the Zhang-Shasha algorithm. This distance represents the minimum number of node-level operations (insertions, deletions, and updates) required to transform one tree into the other.
+1. **Simplification of Expressions**: Both the ground truth (`gt`) and the model-generated answer (`gen`) are first converted into simplified symbolic expressions using the `sympy.simplify()` function. This step ensures that equivalent forms of the same expression are recognized as identical.
+2. **Equivalence Check**: If the simplified expressions of `gt` and `gen` are identical, the EED Score is assigned a perfect score of 100, indicating complete correctness.
+3. **Tree Conversion and Edit Distance Calculation**: If the expressions are not identical, they are converted into tree structures. The edit distance between these trees is then calculated using an extended version of the Zhang-Shasha algorithm. This distance represents the minimum number of node-level operations (insertions, deletions, and updates) required to transform one tree into the other.
 4. **Relative Edit Distance and Scoring**:The relative edit distance $r$ is computed as the ratio of the edit distance to the size of the ground truth tree. The EED Score is then determined based on this relative distance:
 
    - If $r = 0$ (i.e., the expressions are identical), the score is 100.
@@ -136,7 +136,7 @@ EED(answer_latex,gen_latex,debug_mode=True)
 
 - extended_zss.py: The extended tree editing algorithm based on Zhang-Shasha algorithm
 
-- latex_pre_process.py : Many very detailed pre-process functions that convert a LaTeX input into a more canonical and standardized form for later latex2sympy. 
+- latex_pre_process.py : Many very detailed pre-process functions that convert a LaTeX input into a more canonical and standardized form for later latex2sympy.
 
 ## Contributing
 
@@ -175,12 +175,12 @@ The results of the evaluation are shown in the following figure:
 
 ```bibtex
 @misc{qiu2025phybenchholisticevaluationphysical,
-      title={PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models}, 
+      title={PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models},
       author={Shi Qiu and Shaoyang Guo and Zhuo-Yang Song and Yunbo Sun and Zeyu Cai and Jiashen Wei and Tianyu Luo and Yixuan Yin and Haoxu Zhang and Yi Hu and Chenyang Wang and Chencheng Tang and Haoling Chang and Qi Liu and Ziheng Zhou and Tianyu Zhang and Jingtian Zhang and Zhangyi Liu and Minghao Li and Yuku Zhang and Boxuan Jing and Xianqi Yin and Yutong Ren and Zizhuo Fu and Weike Wang and Xudong Tian and Anqi Lv and Laifu Man and Jianxiang Li and Feiyu Tao and Qihua Sun and Zhou Liang and Yushu Mu and Zhongxuan Li and Jing-Jun Zhang and Shutao Zhang and Xiaotian Li and Xingqi Xia and Jiawei Lin and Zheyu Shen and Jiahang Chen and Qiuhao Xiong and Binran Wang and Fengyuan Wang and Ziyang Ni and Bohan Zhang and Fan Cui and Changkun Shao and Qing-Hong Cao and Ming-xing Luo and Muhan Zhang and Hua Xing Zhu},
       year={2025},
       eprint={2504.16074},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2504.16074}, 
+      url={https://arxiv.org/abs/2504.16074},
 }
 ```
