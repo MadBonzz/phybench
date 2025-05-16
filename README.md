@@ -1,13 +1,3 @@
----
-license: mit
-task_categories:
-- question-answering
-- mathematical-reasoning
-language:
-- en
-size_categories:
-- 500<n<1K
----
 <div align="center">
 
 <p align="center" style="font-size:28px"><b>PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models</b></p>
