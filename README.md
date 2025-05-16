@@ -1,6 +1,6 @@
 <div align="center">
 
-<p align="center" style="font-size:28px"><b>PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models</b></p>
+<p align="center" style="font-size:56px"><b>PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models</b></p>
 <p align="center">
 <a href="https://www.phybench.cn/">[🌐 Project]</a>
 <a href="https://arxiv.org/abs/2504.16074">[📄 Paper]</a>
