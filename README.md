@@ -31,13 +31,11 @@ We're excited to announce the initial release of our PHYBench dataset!
 - **100 fully-detailed examples** including handwritten solutions, questions, tags, and reference answers.
 - **400 additional examples** containing questions and tags.
 
-### 📂 Dataset Access
+### 💻 Code Access
 
-You can access the datasets directly via Hugging Face:
+We provide the full implementation of the **EED Score** in this folder: [https://github.com/phybench-official/phybench/tree/main/EED](https://github.com/phybench-official/phybench/tree/main/EED).  
+Check out the usage details there — feel free to ⭐️ and use it!
 
-- [**PHYBench-fullques.json**](https://huggingface.co/datasets/Eureka-Lab/PHYBench/blob/main/PHYBench-fullques_v1.json): 100 examples with complete solutions.
-- [**PHYBench-onlyques.json**](https://huggingface.co/datasets/Eureka-Lab/PHYBench/blob/main/PHYBench-onlyques_v1.json): 400 examples (questions and tags only).
-- [**PHYBench-questions.json**](https://huggingface.co/datasets/Eureka-Lab/PHYBench/blob/main/PHYBench-questions_v1.json): Comprehensive set of all 500 questions.
 
 ### 📬 Contact Us
 
