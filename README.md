@@ -4,7 +4,7 @@
 <p align="center">
 <a href="https://www.phybench.cn/">[🌐 Project]</a>
 <a href="https://arxiv.org/abs/2504.16074">[📄 Paper]</a>
-<a href="https://github.com/phybench-official/phybench">[💻 Code]</a>
+<a href="https://huggingface.co/datasets/Eureka-Lab/PHYBench">[📂 Data]</a>
 <a href="https://www.phybench.cn/leaderboard">[🏆 Leaderboard]</a>
 <a href="#-overview">[🌟 Overview]</a>
 <a href="#-data-details">[🔧 Data Details]</a>
