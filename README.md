@@ -5,6 +5,7 @@
 <a href="https://www.phybench.cn/">[🌐 Project]</a>
 <a href="https://arxiv.org/abs/2504.16074">[📄 Paper]</a>
 <a href="https://github.com/phybench-official/phybench">[💻 Code]</a>
+<a href="https://www.phybench.cn/leaderboard">[🏆 Leaderboard]</a>
 <a href="#-overview">[🌟 Overview]</a>
 <a href="#-data-details">[🔧 Data Details]</a>
 <a href="#-citation">[🚩 Citation]</a>
@@ -19,7 +20,8 @@
 ## New Updates
 
 - **2025.4.25**: We release our code of EED Score. View and star on our github page!
-- **2025.5.16**: We have significantly improved the paper and experiments, including diversified experimental discussions and in-depth error analysis. The updated website is now live at [https://www.phybench.cn/](https://www.phybench.cn/) — we welcome everyone to explore and use it!
+- **2025.5.15**: We have significantly improved the paper and experiments, including diversified experimental discussions and in-depth error analysis. The updated website is now live at [https://www.phybench.cn/](https://www.phybench.cn/) — we welcome everyone to explore and use it!
+- **2025.5.16**: We’ve released a real-time, comprehensive, and in-depth leaderboard — come check it out at [phybench.cn/leaderboard](https://www.phybench.cn/leaderboard)!
 
 
 ## 🚀 Acknowledgement and Progress
@@ -37,13 +39,10 @@ You can access the datasets directly via Hugging Face:
 - [**PHYBench-onlyques.json**](https://huggingface.co/datasets/Eureka-Lab/PHYBench/blob/main/PHYBench-onlyques_v1.json): 400 examples (questions and tags only).
 - [**PHYBench-questions.json**](https://huggingface.co/datasets/Eureka-Lab/PHYBench/blob/main/PHYBench-questions_v1.json): Comprehensive set of all 500 questions.
 
-### 📊 Full-Dataset Evaluation & Leaderboard
+### 📬 Contact Us
 
-We are actively finalizing the full-dataset evaluation pipeline and the real-time leaderboard. Stay tuned for their upcoming release!
+Reach out to us at [**contact@phybench.cn**](mailto:contact@phybench.cn) for any inquiries or collaborations.
 
-Thank you for your patience and ongoing support! 🙏
-
-For further details or collaboration inquiries, please contact us at [**contact@phybench.cn**](mailto:contact@phybench.cn).
 
 
 ## 🌟 Overview
