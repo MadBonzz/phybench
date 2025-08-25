@@ -5,7 +5,7 @@ with open(os.path.join(os.path.dirname(__file__), "..", "README.md"), "r", encod
     long_description = fh.read()
 
 setup(
-    name='eed',
+    name='EED',
     version='0.1.0',
     packages=find_packages(),
     description='A Python package for calculating the Expression Edit Distance (EED) for LaTeX expressions.',

@@ -1,4 +1,4 @@
-from eed import master_convert, EED
+from EED import master_convert, EED
 # This is a test for the EED function
 answer_latex='2 m g + 4\\frac{mv_0^2}{l}'
 gen_latex_1 ="2 m g+4\\frac{mv_0^2}{l}"
