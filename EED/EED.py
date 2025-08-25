@@ -4,7 +4,7 @@ from sympy.core.numbers import Pi, Exp1,I,Infinity,NegativeInfinity
 import numpy as np
 import timeout_decorator
 from extended_zss import ext_distance
-from latex_pre_process import *
+from .latex_pre_process import *
 from sympy.simplify import *
 """
 Guide:
@@ -197,7 +197,6 @@ class TreeNode:
 
 
 
-
 def print_tree(node, indent=0):
     """Print a tree structure"""
     print('  ' * indent + f'└─ {node.label}')
@@ -264,9 +263,9 @@ def EED(answer_latex,test_latex,debug_mode=False):
 
     if not test_latex:
         return 0,-1,-1,-1
-    if '\\int' in test_latex or '\\int' in answer_latex:
+    if '\int' in test_latex or '\int' in answer_latex:
         return 0,-1,-1,-1
-    if '\\sum' in test_latex or '\\sum' in answer_latex:
+    if '\sum' in test_latex or '\sum' in answer_latex:
         return 0,-1,-1,1
     if answer_latex==test_latex:
         return 100,0.0,-1,0
@@ -322,8 +321,7 @@ def EED(answer_latex,test_latex,debug_mode=False):
         print("Failed to build expression tree,returning zero")
         if debug_mode:
             raise SymPyError(f"Failed to build the sympy expression tree.\n GT:{answer_exp}\n GEN:{test_exp}")
-        return 0,-1,-1,-1
-
+        return 0,-1,calc_tree_size(tree_answer),-1
     distance=ext_distance(
                 tree_test,
                 tree_answer,
@@ -332,9 +330,8 @@ def EED(answer_latex,test_latex,debug_mode=False):
                 insert_cost=insert_tree_func,
                 single_remove_cost=remove_func, 
                 remove_cost=remove_tree_func, 
-                update_cost=update_func)    
+                update_cost=update_func)
     try:
-        
 
         distance=ext_distance(
                 tree_test,

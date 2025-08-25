@@ -1,0 +1,4 @@
+sympy
+numpy
+latex2sympy2-extended
+timeout-decorator

@@ -4,7 +4,6 @@ from latex2sympy2_extended import *
 from sympy import simplify
 
 
-
 def brackets_balanced(s: str) -> bool:
     """
     Check if the brackets in a LaTeX string are balanced
@@ -24,7 +23,6 @@ def brackets_balanced(s: str) -> bool:
                 return False  
             stack.pop()        
     return len(stack) == 0  
-
 
 
 def remove_non_ascii(text):
@@ -172,7 +170,7 @@ def convert_latex_fractions(latex_str):
         numerator, denominator = match.group(1), match.group(2)
         wrap_num = f'{{{numerator}}}' if not (numerator.startswith('{') and numerator.endswith('}')) else numerator
         wrap_den = f'{{{denominator}}}' if not (denominator.startswith('{') and denominator.endswith('}')) else denominator
-        return fr'\frac{wrap_num}{wrap_den}'
+        return fr'\frac{{{wrap_num}}}{{{wrap_den}}}'
     
     return re.sub(pattern, replacer, latex_str)
 
@@ -280,7 +278,7 @@ def vec_lower_idx(input_str):
     Return：
         str(str): Converted
     """
-    pattern = r'\\vec\{([^{}]+)_{([^{}]+)}\}'
+    pattern = r'\\vec{([^{}]+)_{([^{}]+)}\}'
     replacement = r'\\vec{\1}_{\2}'
     return re.sub(pattern, replacement, input_str)
 def convert_vec_syntax(text):
@@ -321,7 +319,7 @@ def extract_last_equal_content(s: str, strip_whitespace: bool = True) -> str:
     """
     Extract the content after the last occurrence of specific mathematical comparison or assignment operators.
 
-    :param strip_whitespace: If True, removes leading and trailing whitespace from the extracted content. Defaults to True.
+    :param strip_whitespace: If True, removes leading and trailing whitespace from the extracted content.
     (e.g., '=', '\\approx', '\\ge', '\\le', etc.) within the input string `s`. It then extracts 
     and returns the content that follows the operator. If no operator is found, the entire string 
     is returned. Optionally, leading and trailing whitespace can be stripped from the extracted content.
@@ -477,7 +475,7 @@ class MyConfig:
     Args:
         interpret_as_mixed_fractions (bool): Whether to interpert 2 \frac{1}{2} as 2/2 or 2 + 1/2
         interpret_simple_eq_as_assignment (bool): Whether to interpret simple equations as assignments k=1 -> 1
-        interpret_contains_as_eq (bool): Whether to interpret contains as equality x \\in {1,2,3} -> x = {1,2,3}
+        interpret_contains_as_eq (bool): Whether to interpret contains as equality x \in {1,2,3} -> x = {1,2,3}
         lowercase_symbols (bool): Whether to lowercase all symbols
     """
 class MyNormalization:
@@ -521,3 +519,4 @@ def master_convert(s):
 
     Sym=latex2sympy(preprocessed_stage2,normalization_config=MyNormalization(),conversion_config=MyConfig())
     return Sym
+
