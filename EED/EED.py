@@ -3,7 +3,7 @@ from sympy.core.function import AppliedUndef
 from sympy.core.numbers import Pi, Exp1,I,Infinity,NegativeInfinity
 import numpy as np
 import timeout_decorator
-from extended_zss import ext_distance
+from .extended_zss import ext_distance
 from .latex_pre_process import *
 from sympy.simplify import *
 """
